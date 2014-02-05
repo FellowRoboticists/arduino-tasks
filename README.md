@@ -9,6 +9,7 @@ Usage
 
 Most of the FellowRoboticist projects assume a directory structure like:
 
+```
    + [some-directory]
            |
 	   +- arduino-tasks
@@ -24,6 +25,7 @@ Most of the FellowRoboticist projects assume a directory structure like:
 		       +- [copy-of-cloned-library-1-dir]
 		       |
 		       +- [copy-of-cloned-library-2-dir]
+```
 	   
 If you change your currenct directory to your 'ino-project-dir' and execute the 'rake'
 command, it will attempt to clone the libraries and place a copy of the cloned libraries
