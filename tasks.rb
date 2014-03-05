@@ -56,6 +56,7 @@ module ArduinoTasks
       create_library_tasks(env, library, dependent_task)
     end
 
+    desc "Remove all dependency libraries from the lib directory"
     task :clean do
       libraries.each do | library |
         rm_rf env.dependent_library_dir(library.name)
@@ -77,6 +78,7 @@ module ArduinoTasks
       cp_r env.source_library_dir(library.name), env.lib_dir
     end
 
+    desc "Ensure that the dependency libraries are populated"
     task dependent_task => env.dependent_library_dir(library.name)
 
   end
