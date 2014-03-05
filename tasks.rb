@@ -55,6 +55,12 @@ module ArduinoTasks
     libraries.each do | library |
       create_library_tasks(env, library, dependent_task)
     end
+
+    task :clean do
+      libraries.each do | library |
+        rm_rf env.dependent_library_dir(library.name)
+      end
+    end
   end
 
   def create_library_tasks(env, library, dependent_task)
