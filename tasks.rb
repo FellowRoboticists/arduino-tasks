@@ -61,6 +61,12 @@ module ArduinoTasks
       libraries.each do | library |
         rm_rf env.dependent_library_dir(library.name)
       end
+      sh "ino clean"
+    end
+
+    desc "Build the project"
+    task :build => dependent_task do
+      sh "ino build"
     end
   end
 
